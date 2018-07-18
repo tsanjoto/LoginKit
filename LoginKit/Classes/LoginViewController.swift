@@ -48,7 +48,7 @@ open class LoginViewController: UIViewController, BackgroundMovable, KeyboardMov
     // MARK: Outlet's
 
     @IBOutlet var fields: Array<SkyFloatingLabelTextField> = []
-    @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
+    @IBOutlet open weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var logoImageView: UIImageView!
@@ -146,7 +146,7 @@ extension LoginViewController {
 
     func setupValidation() {
         setupValidationOn(field: emailTextField, rules: ValidationService.emailRules)
-        setupValidationOn(field: passwordTextField, rules: ValidationService.passwordRules)
+        
     }
 
     func setupValidationOn(field: SkyFloatingLabelTextField, rules: ValidationRuleSet<String>) {
